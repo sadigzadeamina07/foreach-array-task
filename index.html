@@ -40,19 +40,18 @@
         let min = array[0]
         let maks = array[0]
         array.forEach((a) => {
-            if (a > min) maks = a
-            if (a < maks) min = a
+            if (a > maks) maks = a
+            if (a < min) min = a
         }
         )
         result2.innerHTML = "En kicik eded:" + min + '<br>' + "En boyuk eded:" + maks
         //3cu task
+        let newarray2 = []
         array.forEach((a, i, arr) => {
-            if (a % 2 == 1) arr[i] = a ** 2
+            if (a % 2 == 1) newarray2.push(arr[i] ** 2)
         });
-        result3.innerHTML = array
+        result3.innerHTML = newarray2
         //4cu task
-        let newarray = []
-        array = [1, 2, 3, 4, 5, 6, 7, 8]
         function faktorial(n) {
             let fakt = 1
             for (let i = 1; i <= n; i++) {
@@ -60,9 +59,9 @@
             }
             return fakt;
         }
-        array.forEach(a => newarray.push(faktorial(a)))
-
-        result4.innerHTML = newarray.join(',')
+        let newarray = [];
+        array.forEach(a => newarray.push(faktorial(a)));
+        result4.innerHTML = newarray.join(', ');
         //5ci task
         let sum2 = 0
         array.forEach(a => {
