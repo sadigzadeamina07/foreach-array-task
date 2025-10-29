@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="arr"></p>
+    <h3>Tapşırıq 1: Bütün ədədlərin Cəmi</h3>
+    <p id="result"></p>
+    <h3>Tapşırıq 2: Ən Kiçik və ən Böyük ədədləri Tapmaq</h3>
+    <p id="result2"></p>
+    <h3>Tapşırıq 3: Tək Ədədlərin Kvadratları</h3>
+    <p id="result3"></p>
+    <h3>Tapşırıq 4: Ədədlərin Faktorialı</h3>
+    <p id="result4"></p>
+    <h3>Tapşırıq 5: 10-dan Böyük Cəmləri Tapmaq</h3>
+    <p id="result5"></p>
+    <script>
+        const arr = document.getElementById('arr')
+        const result = document.getElementById('result')
+        const result2 = document.getElementById('result2')
+        const result3 = document.getElementById('result3')
+        const result4 = document.getElementById('result4')
+    const result5 = document.getElementById('result5')
+        let array = [1, 2, 3, 4, 5, 6, 7, 8]
+
+        arr.innerHTML = "Array:" + array
+            //1ci task
+        let sum = 0
+        array.forEach(item => {
+            sum += item
+                 result.innerHTML += "Cem: " + sum+'<br>'
+      }  )
+       //2cu task
+       array.forEach((a, i, arr) => {
+            if (a % 2 == 1) arr[i] = a ** 2
+        });
+        result3.innerHTML = array
+ //3cu task
+        let newarray=[]
+        array = [1, 2, 3, 4, 5, 6, 7, 8]
+        function faktorial(n){
+                  let  fakt=1
+            for(let i=1;i<=n;i++){
+    fakt*=i
+}
+return fakt;
+        }
+        array.forEach(a=>newarray.push(faktorial(a)))
+
+ result4.innerHTML=newarray.join(',')
+        /*  let min = 0
+        let maks = array[array.length - 1]*/
+        //5ci task
+        let sum2=0
+        array.forEach(a=> {
+            sum2+=a
+            if(sum2>10)  result5.innerHTML+="cem 10dan boyuk :"+ sum2+'<br>'
+        });
+    </script>
+</body>
+
+</html>
