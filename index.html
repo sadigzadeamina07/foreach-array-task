@@ -26,41 +26,48 @@
         const result2 = document.getElementById('result2')
         const result3 = document.getElementById('result3')
         const result4 = document.getElementById('result4')
-    const result5 = document.getElementById('result5')
+        const result5 = document.getElementById('result5')
         let array = [1, 2, 3, 4, 5, 6, 7, 8]
 
         arr.innerHTML = "Array:" + array
-            //1ci task
+        //1ci task
         let sum = 0
         array.forEach(item => {
             sum += item
-                 result.innerHTML += "Cem: " + sum+'<br>'
-      }  )
-       //2cu task
-       array.forEach((a, i, arr) => {
+            result.innerHTML += "Cem: " + sum + '<br>'
+        })
+        //2cu task
+        let min = array[0]
+        let maks = array[0]
+        array.forEach((a) => {
+            if (a > min) maks = a
+            if (a < maks) min = a
+        }
+        )
+        result2.innerHTML = "En kicik eded:" + min + '<br>' + "En boyuk eded:" + maks
+        //3cu task
+        array.forEach((a, i, arr) => {
             if (a % 2 == 1) arr[i] = a ** 2
         });
         result3.innerHTML = array
- //3cu task
-        let newarray=[]
+        //4cu task
+        let newarray = []
         array = [1, 2, 3, 4, 5, 6, 7, 8]
-        function faktorial(n){
-                  let  fakt=1
-            for(let i=1;i<=n;i++){
-    fakt*=i
-}
-return fakt;
+        function faktorial(n) {
+            let fakt = 1
+            for (let i = 1; i <= n; i++) {
+                fakt *= i
+            }
+            return fakt;
         }
-        array.forEach(a=>newarray.push(faktorial(a)))
+        array.forEach(a => newarray.push(faktorial(a)))
 
- result4.innerHTML=newarray.join(',')
-        /*  let min = 0
-        let maks = array[array.length - 1]*/
+        result4.innerHTML = newarray.join(',')
         //5ci task
-        let sum2=0
-        array.forEach(a=> {
-            sum2+=a
-            if(sum2>10)  result5.innerHTML+="cem 10dan boyuk :"+ sum2+'<br>'
+        let sum2 = 0
+        array.forEach(a => {
+            sum2 += a
+            if (sum2 > 10) result5.innerHTML += "cem 10dan boyuk :" + sum2 + '<br>'
         });
     </script>
 </body>
